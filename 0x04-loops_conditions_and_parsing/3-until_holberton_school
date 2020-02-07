@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script is displaying "Holberton School" 10 times
+c=10
+until [ $c -lt 1 ];
+do
+    echo "Holberton School"
+    let c-=1
+done
