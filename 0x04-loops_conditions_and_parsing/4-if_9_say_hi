@@ -7,6 +7,6 @@ do
     then
 	echo "Hi"
     fi
-    echo "Holbeton School"
+    echo "Holberton School"
     let c=c+1
 done
