@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#10 print loop, change the value of position 4 and 8.
+c=1
+while [ $c -le 10 ];
+do
+    if [ $c -eq 4 ];
+    then
+	echo "bad luck"
+    elif [ $c -eq 8 ];
+    then
+	echo "good luck"
+    else
+	echo "Holberton School"
+    fi
+    let c=c+1
+done
