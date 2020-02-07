@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#print 10 times holberton with condition in the ninth position
+c=0
+while [ $c -lt 10 ];
+do
+    if [ $c -eq 9 ];
+    then
+	echo "Hi"
+    fi
+    echo "Holbeton School"
+    let c=c+1
+done
