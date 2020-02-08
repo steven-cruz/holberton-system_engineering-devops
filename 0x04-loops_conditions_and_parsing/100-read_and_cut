@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#bash script to read /etc/passwd and print user, id, path
+while read -r files
+do
+    echo "$files" | cut -d ':' -f1,3,6
+done < /etc/passwd
