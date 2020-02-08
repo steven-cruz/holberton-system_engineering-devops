@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #combine the for loop with the ls command
-for x in pwd
+for files in *;
 do
-    ls
+    echo $files | cut -d '-' -f2
 done
