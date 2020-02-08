@@ -2,5 +2,5 @@
 #combine the for loop with the ls command
 for files in *;
 do
-    echo $files | cut -d '-' -f2
+    echo "$files" | cut -d '-' -f2
 done
