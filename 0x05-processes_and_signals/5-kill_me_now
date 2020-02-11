@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#kill processes without using Ctrl + c.
+
+killPID=$(pgrep -f '4-to_infinity_and_beyond') #get PID of file to kill
+kill "$killPID"
