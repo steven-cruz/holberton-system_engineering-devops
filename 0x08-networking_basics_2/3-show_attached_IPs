@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Bash script that displats all active IPv4 IPs on executing machine
+
+ifconfig | grep 'inet addr' | cut -d ':' -f2 | cut -d ' ' -f1
