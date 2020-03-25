@@ -3,4 +3,5 @@
 sudo apt-get -y update && sudo apt-get install -y nginx
 
 #Change index.html to read "Holberton School"
-echo "holberton School" | sudo tee /var/www/html/index.html
+echo "Holberton School" | sudo tee /usr/share/nginx/html/index.html
+sudo service nginx start
