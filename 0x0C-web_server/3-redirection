@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# bash script to redirect 301 permanent
+sudo apt-get -y update
+sudo apt-get -y install nginx
+
+#Change index.html to read "Holberton School"
+echo "Holberton School" | sudo tee /usr/share/nginx/html/index.html
+sudo service nginx start
+lines="location /redirect_me {\nrewrite ^/(.*)$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;\n}"
+sudo sed -i "30i $lines" /etc/nginx/sites-available/default
+sudo service nginx restart
