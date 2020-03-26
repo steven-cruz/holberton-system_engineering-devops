@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # configure nginx on the server.
-sudo apt-get -y update && sudo apt-get install -y nginx
+sudo apt-get update && sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
 
 #Change index.html to read "Holberton School"
-echo "Holberton School" | sudo tee /usr/share/nginx/html/index.html
+sudo echo "Holberton School" | sudo tee /usr/share/nginx/html/index.html
 sudo service nginx start
