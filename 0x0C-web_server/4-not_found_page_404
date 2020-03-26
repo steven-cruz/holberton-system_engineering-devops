@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# bash script to replace line with multiple lines with sed
+sudo apt-get -y update
+sudo apt-get install -y nginx
+
+#Change index.html to read "Holberton School"
+echo "Holberton School" | sudo tee /usr/share/nginx/html/index.html
+
+lines="\\\tlocation /redirect_me {\n\t\t return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n"
+sudo sed -i "26i $lines" /etc/nginx/sites-available/default
+echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/404.html
+line2="\\\terror_page 404 /404.html;\n\tlocation = /custom_404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}"
+sudo sed -i "30i $line2" /etc/nginx/sites-available/default
+sudo service nginx start
