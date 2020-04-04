@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# bash script to set up Load balancer on two websites usng Haproxy
+sudo apt-get update -y
+sudo apt-get install -y haproxy
+
+#Manage Haproxy via init script
+sudo sed -i "s/ENABLED=0/ENABLED=1/g" /etc/default/haproxy
+#configure haproxy.cfg
+front="\\\nfrontend http_front\n \tbind *:80\n \tmode http\n \tdefault_backend http_back\n"
+back="\\backend http_back\n \tbalance roundrobin\n \tserver 344-web-01 35.196.233.196:80 check\n \tserver 344-web-02 35.237.182.135:80 check"
+sudo sed -i "\$a$front\n$back" /etc/haproxy/haproxy.cfg
+
+sudo service haproxy restart
