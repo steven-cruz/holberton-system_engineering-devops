@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# bash script to nginx on server
+sudo apt-get -y update
+sudo apt-get install -y nginx
+sudo sed -i "23i\\\tadd_header X-Served-By $(cat /etc/hostname);" /etc/nginx/sites-available/default
+#Change index.html to read "Holberton School"
+echo "Holberton School" | sudo tee /usr/share/nginx/html/index.html
+sudo service nginx restart
