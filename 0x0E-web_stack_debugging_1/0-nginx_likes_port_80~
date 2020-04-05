@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Debbug and NGINX server
+
+cd /etc/nginx/sites-enabled
+sed -i 's/8080 default/80 default/' default
+sudo service nginx restart
