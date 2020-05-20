@@ -1,5 +1,5 @@
-# Replace wrongly named file
-exac { 'fixer':
-  command  => 'sed -i "s|class-wp-locale.phpp|class-wp-locale.php|g" /var/www/html/wp-settings.php',
-  provider => shell,
+# Puppet script to replace wrongly named file
+exec { 'mv class-wp-locale.php class-wp-locale.phpp':
+  path => ['/bin'],
+  cwd  => '/var/www/html/wp-includes',
 }
