@@ -1,6 +1,6 @@
 # reset conection port 22
 exec { 'increase the uLimit of nginx':
-sed -i \'s/15/15000/g\' /etc/default/nginx',
+command => 'sed -i \'s/15/15000/g\' /etc/default/nginx',
   path    => ['/bin']
 }
 exec { 'restart nginx':
